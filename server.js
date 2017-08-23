@@ -5,47 +5,37 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article One | Sendil',
-    heading: 'Article One',
-    date: 'August 23, 2017',
-    content:` 
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    `
-    
-};
-var articleThree = {
-    title: 'Article Three | Sendil',
-    heading: 'Article Three',
-    date: 'Januaryt 28, 2017',
-    content:` 
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    `
-    
-};
-var articleTwo = {
-    title: 'Article Two | Sendil',
-    heading: 'Article Two',
-    date: 'August 28, 2017',
-    content:` 
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
-    </p>
-    `
-    
+var articles = {
+    'article-one': {
+        title: 'Article One | Sendil',
+        heading: 'Article One',
+        date: 'August 23, 2017',
+        content:` 
+        <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+        </p>
+        <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+        </p>
+        <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+        </p>
+        `
+    },
+    'article-two': {
+        title: 'Article Two | Sendil',
+        heading: 'Article Two',
+        date: 'August 28, 2017',
+        content:` 
+        <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+        </p>
+        `
+    },
+    'article-three': {
+        title: 'Article Three | Sendil',
+        heading: 'Article Three',
+        date: 'Januaryt 28, 2017',
+        content:` 
+        <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my 
+        </p>`
+    }
 };
 var displayHtml= function(data){
     var title = data.title;
@@ -85,15 +75,8 @@ var displayHtml= function(data){
 
 
 app.get('/article-one', function(req,res){
-   res.send(displayHtml(articleOne));
-});
-
-app.get('/article-two', function(req,res){
-     res.send(displayHtml(articleTwo));
-});
-
-app.get('/article-three', function(req,res){
-     res.send(displayHtml(articleThree));
+    var articleName = req.params.articleName;
+    res.send(displayHtml(articles[articleName]));
 });
 
 app.get('/', function (req, res) {
