@@ -33,10 +33,10 @@ var articleThree = {
     `
     
 };
-var articleOne = {
-    title: 'Article One | Sendil',
-    heading: 'Article One',
-    date: 'August 23, 2017',
+var articleTwo = {
+    title: 'Article Two | Sendil',
+    heading: 'Article Two',
+    date: 'August 28, 2017',
     content:` 
     <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
     </p>
