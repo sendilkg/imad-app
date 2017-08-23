@@ -18,7 +18,35 @@ var articleOne = {
     </p>
     `
     
-}
+};
+var articleThree = {
+    title: 'Article Three | Sendil',
+    heading: 'Article Three',
+    date: 'Januaryt 28, 2017',
+    content:` 
+    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+    </p>
+    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+    </p>
+    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+    </p>
+    `
+    
+};
+var articleOne = {
+    title: 'Article One | Sendil',
+    heading: 'Article One',
+    date: 'August 23, 2017',
+    content:` 
+    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+    </p>
+    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+    </p>
+    <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.
+    </p>
+    `
+    
+};
 var displayHtml= function(data){
     var title = data.title;
     var heading = data.heading;
@@ -61,11 +89,11 @@ app.get('/article-one', function(req,res){
 });
 
 app.get('/article-two', function(req,res){
-     res.sendFile(path.join(__dirname,'ui', 'article-two.html'));
+     res.send(displayHtml(articleTwo));
 });
 
 app.get('/article-three', function(req,res){
-     res.sendFile(path.join(__dirname,'ui', 'article-three.html'));
+     res.send(displayHtml(articleThree));
 });
 
 app.get('/', function (req, res) {
