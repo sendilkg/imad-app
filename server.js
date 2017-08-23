@@ -74,8 +74,8 @@ var displayHtml= function(data){
 };
 
 
-app.get('/:articleName', function(req,res){
-    var articleName = req.params.articleName;
+app.get('/:articleFiled', function(req,res){
+    var articleName = req.params.articleFiled;
     res.send(displayHtml(articles[articleName]));
 });
 
