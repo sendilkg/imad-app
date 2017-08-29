@@ -97,7 +97,7 @@ post.onclick = function(){
         }
         
     };
-    var commentInput = document.getElementById('comment-ip');
+    var commentInput = document.getElementById('comment');
     var commnetValue = commentInput.value;
     //make a request
     request.open('GET', 'http://sendilcareer.imad.hasura-app.io/post-comment?comment-ip='+ nameValue, true);
