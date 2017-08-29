@@ -7,12 +7,14 @@ img.onclick = function(){
 //counter code
 
 var button = document.getElementById('counter');
+
 button.onclick = function () {
+    
     //create a request variable
     var request = new XMLHttpRequest();
     
     //process the request info
-    request.onreadystatechange = funcion () {
+    request.onreadystatechange = function () {
         if(request.readystate === XMLHttpRequest.DONE){
             //take action
             if(request.status === 200 ){
@@ -28,10 +30,5 @@ button.onclick = function () {
     //make a request
     request.open('GET', 'http://sendilcareer.imad.hasura-app.io/counter', true);
     request.send(null);
-
-
-    
-    
-    
     
 };
