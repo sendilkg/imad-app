@@ -99,7 +99,7 @@ app.get('/submit-name', function(req, res){
 });
 var posts = [];
 app.get('/post-comment', function(req, res){
-    var post = req.query.name;
+    var post = req.query.comment-ip;
     posts.push(post);
     res.send(JSON.stringify(posts));
     
