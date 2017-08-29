@@ -70,8 +70,8 @@ var displayHtml= function(data){
                 <hr/>
                 Post Your comments here:
                 <br>
-                <textarea id="comment" rows="4" cols="80">
-                </textarea>
+                <input type="text" id="comment">
+                </input>
                 <input type="button" id="post-btn" value="Post"></input>
                 <br>
                 <br>
