@@ -73,7 +73,10 @@ var displayHtml= function(data){
                 <textarea id="comment-ip' rows="4" cols="80">
                 </textarea>
                 <input type="button" id="post-btn" value="Post"></input>
-                
+                <br>
+                <br>
+                <ul id="commentlist">
+                </ul>
             </div>
         </body>
     </html>
