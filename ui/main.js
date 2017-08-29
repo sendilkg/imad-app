@@ -17,7 +17,7 @@ button.onclick = function () {
     request.onreadystatechange = function () {
         if(request.readystate === XMLHttpRequest.DONE){
             //take action
-            alert("here");
+            console.log("here");
             if(request.status === 200 ){
                 var counter = request.responseText;
                 
