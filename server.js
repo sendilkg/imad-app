@@ -72,7 +72,7 @@ var displayHtml= function(data){
                 <br>
                 <input type="text" id="comment">
                 </input>
-                <input type="button" id="post-btn" value="Post"></input>
+                <input type="button" id="postbtn" value="Post"></input>
                 <br>
                 <br>
                 <ul id="commentlist">
