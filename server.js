@@ -98,11 +98,6 @@ app.get('/submit-name', function(req, res){
     
 });
 
-app.get('/:articleFiled', function(req,res){
-    var articleName = req.params.articleFiled;
-    res.send(displayHtml(articles[articleName]));
-});
-
 var posts = [];
 app.get('/post-comment', function(req, res){
     var post = req.query.comment;
@@ -110,6 +105,13 @@ app.get('/post-comment', function(req, res){
     res.send(JSON.stringify(posts));
     
 });
+
+app.get('/:articleFiled', function(req,res){
+    var articleName = req.params.articleFiled;
+    res.send(displayHtml(articles[articleName]));
+});
+
+
 
 
 
