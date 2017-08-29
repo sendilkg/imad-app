@@ -22,11 +22,7 @@ button.onclick = function () {
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
-            else
-            {
-                var span = document.getElementById('count');
-                span.innerHTML = "error";
-            }
+           
             //not done yet
         }
         
