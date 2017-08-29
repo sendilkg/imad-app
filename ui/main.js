@@ -84,7 +84,7 @@ post.onclick = function(){
             //take action
             if(request.status === 200 ){
                 var posts = request.responseText;
-                names = JSON.parse(posts);
+                posts = JSON.parse(posts);
                 var list = '';
                 for(var i=0; i< posts.length; i++){
                     list += '<li>' + posts[i] + '</li>';
@@ -100,7 +100,7 @@ post.onclick = function(){
     var commentInput = document.getElementById('comment');
     var commnetValue = commentInput.value;
     //make a request
-    request.open('GET', 'http://sendilcareer.imad.hasura-app.io/post-comment?comment-ip='+ nameValue, true);
+    request.open('GET', 'http://sendilcareer.imad.hasura-app.io/post-comment?comment='+ commnetValue, true);
     request.send(null);
     
 };
