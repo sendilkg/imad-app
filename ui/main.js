@@ -37,12 +37,12 @@ button.onclick = function () {
 //name part
 
 var nameInput = document.getElementById('name');
-var nameValue = nameInput.value;
+
 var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
     //make a request to the server and send the name
     //capyture the list of names and render it to the list
-    
+    var nameValue = nameInput.value;
         //create a request variable
     var request = new XMLHttpRequest();
     
