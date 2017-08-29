@@ -5,7 +5,7 @@ img.onclick = function(){
 
 }*/
 //counter code
-var counter = 0;
+
 var button = document.getElementById('counter');
 
 button.onclick = function () {
@@ -17,9 +17,10 @@ button.onclick = function () {
     request.onreadystatechange = function () {
         if(request.readystate === XMLHttpRequest.DONE){
             //take action
+            alert("here");
             if(request.status === 200 ){
                 var counter = request.responseText;
-                alert(counter.toString());
+                
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
