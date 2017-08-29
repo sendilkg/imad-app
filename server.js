@@ -50,7 +50,7 @@ var displayHtml= function(data){
             </title>
             <meta name="viewport" content="width=device-width, initial-sacle=1" />
             <link href="ui/style.css" rel="stylesheet" />
-            <script type="text/javascript" src="/ui/main.js">
+            <script type="text/javascript" src="/ui/main.js"></script>
         </head>
         <body>
             <div class="container">
