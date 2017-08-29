@@ -67,10 +67,14 @@ var displayHtml= function(data){
                    ${content}        
                 </div>
                 <hr/>
+                Post Your comments here:
+                <br>
                 <textarea id="comment-ip' rows="4" cols="80">
                 </textarea>
                 <input type="button" id="post-btn" value="Post"></input>
-                <hr/>
+                <br>
+                <br>
+                <br>
             </div>
         </body>
     </html>
