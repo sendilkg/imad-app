@@ -73,3 +73,34 @@ submit.onclick = function(){
     
 };
 
+var post = document.getElementById('post-btn');
+post.onclick = function(){
+    
+    var request = new XMLHttpRequest();
+    
+    //process the request info
+    request.onreadystatechange = function () {
+        if(request.readyState === XMLHttpRequest.DONE){
+            //take action
+            if(request.status === 200 ){
+                var posts = request.responseText;
+                names = JSON.parse(posts);
+                var list = '';
+                for(var i=0; i< posts.length; i++){
+                    list += '<li>' + posts[i] + '</li>';
+                }
+                var ul = document.getElementById('commentlist');
+                ul.innerHTML = list;
+            }
+           
+            //not done yet
+        }
+        
+    };
+    var commentInput = document.getElementById('comment-ip');
+    var commnetValue = commentInput.value;
+    //make a request
+    request.open('GET', 'http://sendilcareer.imad.hasura-app.io/post-comment?comment-ip='+ nameValue, true);
+    request.send(null);
+    
+};
