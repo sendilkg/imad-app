@@ -68,7 +68,15 @@ var displayHtml= function(data){
                    ${content}        
                 </div>
                 <hr/>
-                
+                Post Your comments here:
+                <br>
+                <textarea id="comment' rows="4" cols="80">
+                </textarea>
+                <input type="button" id="post-btn" value="Post"></input>
+                <br>
+                <br>
+                <ul id="commentlist">
+                </ul>
             </div>
         </body>
     </html>
@@ -89,6 +97,12 @@ app.get('/submit-name', function(req, res){
     res.send(JSON.stringify(names));
     
 });
+
+app.get('/:articleFiled', function(req,res){
+    var articleName = req.params.articleFiled;
+    res.send(displayHtml(articles[articleName]));
+});
+
 var posts = [];
 app.get('/post-comment', function(req, res){
     var post = req.query.comment;
@@ -97,10 +111,7 @@ app.get('/post-comment', function(req, res){
     
 });
 
-app.get('/:articleFiled', function(req,res){
-    var articleName = req.params.articleFiled;
-    res.send(displayHtml(articles[articleName]));
-});
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
