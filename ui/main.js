@@ -73,7 +73,7 @@ submit.onclick = function(){
     
 };
 
-var post = document.getElementById('post-btn');
+var post = document.getElementById('postbtn');
 post.onclick = function(){
     
     var request = new XMLHttpRequest();
