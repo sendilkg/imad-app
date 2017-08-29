@@ -67,7 +67,8 @@ var displayHtml= function(data){
                    ${content}        
                 </div>
                 <hr/>
-                
+                <textarea id="comment-ip' rows="4" cols="80">
+                </textarea>
             </div>
         </body>
     </html>
