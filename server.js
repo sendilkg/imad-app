@@ -50,6 +50,7 @@ var displayHtml= function(data){
             </title>
             <meta name="viewport" content="width=device-width, initial-sacle=1" />
             <link href="ui/style.css" rel="stylesheet" />
+            <script type="text/javascript" src="/ui/main.js">
         </head>
         <body>
             <div class="container">
@@ -74,7 +75,8 @@ var displayHtml= function(data){
                 <input type="button" id="post-btn" value="Post"></input>
                 <br>
                 <br>
-                <br>
+                <ul id="commentlist">
+                </ul>
             </div>
         </body>
     </html>
@@ -93,6 +95,13 @@ app.get('/submit-name', function(req, res){
     var name = req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
+    
+});
+var posts = [];
+app.get('/post-comment', function(req, res){
+    var post = req.query.name;
+    posts.push(post);
+    res.send(JSON.stringify(posts));
     
 });
 
