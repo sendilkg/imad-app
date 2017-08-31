@@ -105,7 +105,7 @@ app.get('/counter', function(req,res){
 function hash(input, salt)
 {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    return["pbkdf2","10000","This-is-a-random-string",hashed.toString('hex')].join('$');
+    return["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
 }
 app.get('/hash/:input', function(req, res){
     
@@ -161,9 +161,8 @@ app.post('/login', function(req, res){
             }
             else{
                 var dbString = result.rows[0].password;
-                console.log(dbString.toString());
                 var salt = dbString.split('$')[2];
-                var hassedPassword = hash(password,salt);
+                var hassedPassword = hash(password, salt);
                 if(hassedPassword === dbString){
                      res.send("Username/password matched");
                 }
