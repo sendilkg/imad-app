@@ -39,7 +39,7 @@ button.onclick = function () {
 
 
 var login = document.getElementById('login_btn');
-submit.onclick = function(){
+login.onclick = function(){
     //make a request to the server and send the name
     //capyture the list of names and render it to the list
    
