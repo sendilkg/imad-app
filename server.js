@@ -155,6 +155,7 @@ app.post('/login', function(req, res){
              res.status(500).send(err.toString());
         }
         else{
+            
             if(result.rows.length === 0){
                 res.status(403).send("username/password is invalid!");
             }
@@ -166,7 +167,7 @@ app.post('/login', function(req, res){
                      res.send("Username/password matched");
                 }
                 else{
-                    res.status(403).send("username/password is invalid!");
+                    res.status(404).send("username/password is invalid!");
                 }
                 
             }
