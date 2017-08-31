@@ -70,7 +70,7 @@ login.onclick = function(){
     console.log(password);
     //make a request
     request.open('POST', 'http://sendilcareer.imad.hasura-app.io/login', true);
-    request.setRequestHeader('Content-type:', 'application/json');
+    request.setRequestHeader('content-type:', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
     
 };
