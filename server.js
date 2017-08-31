@@ -161,13 +161,14 @@ app.post('/login', function(req, res){
             }
             else{
                 var dbString = result.rows[0].password;
+                console.log(dbString.toString());
                 var salt = dbString.split('$')[2];
                 var hassedPassword = hash(password,salt);
                 if(hassedPassword === dbString){
                      res.send("Username/password matched");
                 }
                 else{
-                    res.status(404).send("username/password is invalid!");
+                    res.status(403).send("username/password is invalid!");
                 }
                 
             }
