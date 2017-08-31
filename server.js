@@ -58,7 +58,7 @@ var displayHtml= function(data){
                 ${title}
             </title>
             <meta name="viewport" content="width=device-width, initial-sacle=1" />
-            <link href="../ui/style.css" rel="stylesheet" />
+            <link href="/ui/style.css" rel="stylesheet" />
             <script type="text/javascript" src="/ui/main.js"></script>
         </head>
         <body>
@@ -71,7 +71,7 @@ var displayHtml= function(data){
                     ${heading}
                 </h3>
                 <div>
-                    ${date.toString()}
+                    ${date.toDateString()}
                 </div>
                 <div>
                    ${content}        
