@@ -14,7 +14,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
+/*var articles = {
     'article-one': {
         title: 'Article One | Sendil',
         heading: 'Article One',
@@ -45,7 +45,7 @@ var articles = {
         <p> this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my article one.this is my 
         </p>`
     }
-};
+};*/
 var displayHtml= function(data){
     var title = data.title;
     var heading = data.heading;
