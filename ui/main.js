@@ -38,6 +38,46 @@ button.onclick = function () {
 
 
 
+var login = document.getElementById('login_btn');
+submit.onclick = function(){
+    //make a request to the server and send the name
+    //capyture the list of names and render it to the list
+   
+    //create a request variable
+    var request = new XMLHttpRequest();
+    
+    //process the request info
+    request.onreadystatechange = function () {
+        if(request.readyState === XMLHttpRequest.DONE){
+            //take action
+            if(request.status === 200 ){
+               console.log('success');
+               alert('success');
+            }else if(request.status === 403 ){
+               console.log('username/pasword didnt match');
+               alert('username/pasword didnt match');
+            }else if(request.status === 500 ){
+               console.log('internal error at the server');
+               alert('internal error at the server');
+            }
+           
+            //not done yet
+        }
+        
+    };
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    console.log(username);
+    console.log(password);
+    //make a request
+    request.open('POST', 'http://sendilcareer.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-type: application/json');
+    request.send(JSON.stringify({username: username, password: password}));
+    
+};
+
+
+
 var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
     //make a request to the server and send the name
