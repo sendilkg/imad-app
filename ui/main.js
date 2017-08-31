@@ -60,7 +60,6 @@ submit.onclick = function(){
                console.log('internal error at the server');
                alert('internal error at the server');
             }
-           
             //not done yet
         }
         
