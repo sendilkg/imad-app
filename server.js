@@ -100,10 +100,10 @@ app.get('/counter', function(req,res){
    res.send(counter.toString());
 });
 
-function hash(input,salt)
+function hash(input, salt)
 {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    retrun(hashed.toString('hex'));
+    return(hashed.toString('hex'));
 }
 app.get('/hash/:input', function(req, res){
     
