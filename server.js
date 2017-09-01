@@ -193,6 +193,10 @@ app.get('/check-login', function(req, res){
     }
     
 });
+app.get('/logout', function(req, res){
+    delete req.session.auth;
+     res.send('you are logged out');
+});
 
 app.get('/articles/:articleFiled', function(req,res){
     
