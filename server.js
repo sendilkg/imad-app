@@ -233,10 +233,10 @@ app.get('/post-comment', function(req, res){
     
 });
 
-app.get('/:articleFiled', function(req,res){
+/*app.get('/:articleFiled', function(req,res){
     var articleName = req.params.articleFiled;
     res.send(displayHtml(articles[articleName]));
-});
+});*/
 
 
 
